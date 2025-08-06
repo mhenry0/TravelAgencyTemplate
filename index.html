@@ -113,7 +113,7 @@
     /* CSS */
 .hero-text {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 8%;
   transform: translateY(-50%);
   width: 90%;
@@ -161,6 +161,20 @@
 
 /* Ajustes puntuales en móviles */
 @media (max-width: 576px) {
+  .hero-text {
+    top: 60%;
+    transform: translateY(-60%);
+  }
+  .hero-title {
+    margin-bottom: 0.5rem;
+  }
+  .hero-sub {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Ajustes puntuales en móviles */
+@media (max-width: 420px) {
   .hero-text {
     top: 60%;
     transform: translateY(-60%);
