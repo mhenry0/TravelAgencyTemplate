@@ -85,7 +85,7 @@
        
 
         <!-- Opción 2: Página/Formulario interno -->
-        <a href="./contacto.html#cotizar" class="navbar-btn btn rounded-pill px-4" style="background-color: #1ba7c7;color: #fff;">
+        <a href="./destinos.html" class="navbar-btn btn rounded-pill px-4" style="background-color: #1ba7c7;color: #fff;">
           <i class="bi bi-clipboard2-check me-1"></i> Cotizar ahora
         </a>
       </div>
@@ -101,14 +101,14 @@
   <div class="hero-text">
     <h1 class="hero-title" >
       SOMOS UNA AGENCIA<br>
-      DE VIAJES<span class="hero-outline"> EN COLOMBIA,</span><br>
-      CONOCENOS.
+      DE VIAJES CON<span class="hero-outline"> +10 AÑOS</span><br>
+      DE EXPERIENCIA.
     </h1>
     <p class="hero-sub">
       Te invitamos a descubrir Colombia con Toucan Adventures.
       Diseñamos viajes únicos, seguros y auténticos, con un enfoque local y personalizado.
     </p>
-    <a href="#destinos" class="btn btn-outline-light btn-lg rounded-pill hero-btn">
+    <a href="./destinos.html" class="btn btn-outline-light btn-lg rounded-pill hero-btn">
       <i class="bi bi-globe2 me-2"></i>Ver Paquetes
     </a>
   </div>
@@ -319,12 +319,106 @@
       </div>
     </div>
 
-    <!-- Cómo trabajamos (acordeón de pasos) -->
-    <div class="row g-4 mt-5">
-      <div class="col-lg-6">
-        <h5 class="mb-3">Cómo planificamos tu viaje</h5>
+ <!-- (Opcional) Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<!-- AOS (animaciones) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+  /* ===== Timeline (horizontal en desktop, vertical en mobile) ===== */
+  .timeline { position: relative; padding: 1rem 0 2rem; }
+  .timeline-steps { position: relative; display: flex; justify-content: space-between; gap: 1rem; }
+  .timeline-line {
+    position: absolute; left: 0; right: 0; top: 36px; height: 2px;
+    background: linear-gradient(90deg, #198754, #22a06a);
+    opacity: .35;
+  }
+  .timeline-step { text-align: center; width: 100%; }
+  .timeline-dot {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto .5rem;
+    background: #198754; color: #fff;
+    box-shadow: 0 10px 22px rgba(25,135,84,.25);
+  }
+  .timeline-dot i { font-size: 1.3rem; line-height: 1; }
+  .timeline-label { font-weight: 600; color: #212529; }
+  .timeline-sub { font-size: .9rem; color: #6c757d; }
+
+  /* Vertical en <= md */
+  @media (max-width: 768px){
+    .timeline { padding: .5rem 0 1rem; }
+    .timeline-steps { flex-direction: column; gap: 1.25rem; }
+    .timeline-line { left: 28px; width: 2px; top: 0; bottom: 0; height: auto; right: auto; }
+    .timeline-step { text-align: left; display: grid; grid-template-columns: 56px 1fr; column-gap: .75rem; }
+    .timeline-dot { margin: 0; }
+  }
+
+  /* Detalles finos */
+  @media (max-width: 576px){
+    .timeline-dot { width: 52px; height: 52px; }
+  }
+</style>
+
+<!-- ========== SECCIÓN 1: CÓMO TRABAJAMOS (con Timeline + AOS) ========== -->
+<section id="como-trabajamos" class="py-5 bg-light">
+  <div class="container">
+
+    <!-- Título -->
+    <div class="row mb-4" data-aos="fade-up">
+      <div class="col text-center">
+        <h2 class="fw-bold">Cómo planificamos tu viaje</h2>
+        <p class="text-muted mb-0">De la idea a la experiencia, paso a paso</p>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-10">
+        <div class="timeline" data-aos="fade-up" data-aos-delay="50">
+          <div class="timeline-line"></div>
+          <div class="timeline-steps">
+            <div class="timeline-step" data-aos="zoom-in" data-aos-delay="0">
+              <div class="timeline-dot"><i class="bi bi-chat-dots"></i></div>
+              <div class="timeline-label">Brief</div>
+              <div class="timeline-sub">Preferencias y fechas</div>
+            </div>
+            <div class="timeline-step" data-aos="zoom-in" data-aos-delay="60">
+              <div class="timeline-dot"><i class="bi bi-file-earmark-text"></i></div>
+              <div class="timeline-label">Propuesta</div>
+              <div class="timeline-sub">Itinerario a medida</div>
+            </div>
+            <div class="timeline-step" data-aos="zoom-in" data-aos-delay="120">
+              <div class="timeline-dot"><i class="bi bi-check2-circle"></i></div>
+              <div class="timeline-label">Confirmación</div>
+              <div class="timeline-sub">Reservas y pagos</div>
+            </div>
+            <div class="timeline-step" data-aos="zoom-in" data-aos-delay="180">
+              <div class="timeline-dot"><i class="bi bi-airplane"></i></div>
+              <div class="timeline-label">Preparación</div>
+              <div class="timeline-sub">Checklist y consejos</div>
+            </div>
+            <div class="timeline-step" data-aos="zoom-in" data-aos-delay="240">
+              <div class="timeline-dot"><i class="bi bi-headset"></i></div>
+              <div class="timeline-label">24/7</div>
+              <div class="timeline-sub">Acompañamiento total</div>
+            </div>
+            <div class="timeline-step" data-aos="zoom-in" data-aos-delay="300">
+              <div class="timeline-dot"><i class="bi bi-emoji-smile"></i></div>
+              <div class="timeline-label">Feedback</div>
+              <div class="timeline-sub">Mejora continua</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acordeón detallado -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
         <div class="accordion" id="acPlan">
-          <div class="accordion-item">
+          <!-- 1 -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="0">
             <h2 class="accordion-header" id="st1">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cp1" aria-expanded="true" aria-controls="cp1">
                 1) Brief inicial y preferencias
@@ -332,11 +426,16 @@
             </h2>
             <div id="cp1" class="accordion-collapse collapse show" aria-labelledby="st1" data-bs-parent="#acPlan">
               <div class="accordion-body">
-                Definimos fechas, presupuesto, intereses (naturaleza, cultura, gastronomía) y ritmo del viaje.
+                <ul class="mb-0">
+                  <li>Fechas tentativas, presupuesto y ritmo de viaje.</li>
+                  <li>Intereses: naturaleza, cultura, gastronomía, aventura.</li>
+                  <li>Estilo de alojamiento y necesidades especiales.</li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <!-- 2 -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="60">
             <h2 class="accordion-header" id="st2">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp2" aria-expanded="false" aria-controls="cp2">
                 2) Propuesta y ajustes
@@ -344,11 +443,16 @@
             </h2>
             <div id="cp2" class="accordion-collapse collapse" aria-labelledby="st2" data-bs-parent="#acPlan">
               <div class="accordion-body">
-                Te enviamos un itinerario a medida con opciones de hotel, actividades y traslados. Ajustamos hasta que quede perfecto.
+                <ul class="mb-0">
+                  <li>Itinerario a medida con tiempos realistas.</li>
+                  <li>Opciones de hoteles, actividades y traslados.</li>
+                  <li>Ajustes hasta quedar perfecto.</li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <!-- 3 -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="120">
             <h2 class="accordion-header" id="st3">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp3" aria-expanded="false" aria-controls="cp3">
                 3) Confirmación y logística
@@ -356,11 +460,16 @@
             </h2>
             <div id="cp3" class="accordion-collapse collapse" aria-labelledby="st3" data-bs-parent="#acPlan">
               <div class="accordion-body">
-                Reservamos con aliados locales certificados y te compartimos tu pack de viaje con horarios, contactos y recomendaciones.
+                <ul class="mb-0">
+                  <li>Reservas con aliados locales certificados.</li>
+                  <li>Documento de viaje con horarios y contactos.</li>
+                  <li>Políticas claras y medios de pago variados.</li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <!-- 4 -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="180">
             <h2 class="accordion-header" id="st4">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp4" aria-expanded="false" aria-controls="cp4">
                 4) Acompañamiento 24/7
@@ -368,73 +477,186 @@
             </h2>
             <div id="cp4" class="accordion-collapse collapse" aria-labelledby="st4" data-bs-parent="#acPlan">
               <div class="accordion-body">
-                Monitoreamos tu ruta y estamos disponibles para cualquier cambio, emergencia o recomendación en tiempo real.
+                <ul class="mb-0">
+                  <li>Soporte en tiempo real por WhatsApp/llamada.</li>
+                  <li>Reconfirmación diaria de servicios.</li>
+                  <li>Gestión ágil ante cambios o imprevistos.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="240">
+            <h2 class="accordion-header" id="st5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp5" aria-expanded="false" aria-controls="cp5">
+                5) Preparación previa al viaje
+              </button>
+            </h2>
+            <div id="cp5" class="accordion-collapse collapse" aria-labelledby="st5" data-bs-parent="#acPlan">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>Checklist de equipaje y documentación.</li>
+                  <li>Consejos de clima, salud y divisas.</li>
+                  <li>Reunión final de dudas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="accordion-header" id="st6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp6" aria-expanded="false" aria-controls="cp6">
+                6) Feedback y mejoras
+              </button>
+            </h2>
+            <div id="cp6" class="accordion-collapse collapse" aria-labelledby="st6" data-bs-parent="#acPlan">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>Encuesta de satisfacción y reseñas.</li>
+                  <li>Programa de referidos y beneficios.</li>
+                  <li>Optimización de rutas y proveedores.</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-4" data-aos="zoom-in">
+          <a href="./destinos.html" class="btn btn-outline-dark rounded-pill me-2"><i class="bi bi-globe2 me-1"></i> Ver destinos</a>
+          <a href="https://wa.me/50600000000?text=Quiero%20planear%20mi%20viaje" target="_blank" rel="noopener" class="btn btn-success rounded-pill">
+            <i class="bi bi-whatsapp me-1"></i> Cotizar ahora
+          </a>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Sostenibilidad + FAQ -->
-      <div class="col-lg-6">
-        <h5 class="mb-3">Sostenibilidad y bienestar</h5>
-        <ul class="list-unstyled mb-4">
-          <li class="d-flex align-items-start mb-2">
-            <i class="bi bi-leaf text-success me-2"></i>
-            <span>Operación con proveedores que cumplen prácticas ambientales (residuos, agua y energía).</span>
-          </li>
-          <li class="d-flex align-items-start mb-2">
-            <i class="bi bi-people text-success me-2"></i>
-            <span>Experiencias con comunidades locales y respeto por su patrimonio cultural.</span>
-          </li>
-          <li class="d-flex align-items-start">
-            <i class="bi bi-briefcase-fill text-success me-2"></i>
-            <span>Seguro de responsabilidad y protocolos de seguridad actualizados.</span>
-          </li>
-        </ul>
+<!-- ========== SECCIÓN 2: SOSTENIBILIDAD Y BIENESTAR (con AOS) ========== -->
+<section id="sostenibilidad" class="py-5">
+  <div class="container">
+    <div class="row mb-4" data-aos="fade-up">
+      <div class="col text-center">
+        <h2 class="fw-bold">Sostenibilidad y bienestar</h2>
+        <p class="text-muted mb-0">Compromisos reales con el destino y contigo</p>
+      </div>
+    </div>
 
-        <h5 class="mb-3">Preguntas frecuentes</h5>
-        <div class="accordion" id="acFaq">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="q1">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
-                ¿El seguro de viaje está incluido?
-              </button>
-            </h2>
-            <div id="a1" class="accordion-collapse collapse" data-bs-parent="#acFaq">
-              <div class="accordion-body">
-                Ofrecemos planes con y sin seguro. Recomendamos incluirlo; podemos cotizarlo y gestionarlo por ti.
-              </div>
-            </div>
+    <div class="row g-4 mb-4">
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="h-100 p-4 bg-white border rounded-4 shadow-sm">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-tree text-success fs-4 me-2"></i>
+            <h5 class="mb-0">Medioambiente</h5>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="q2">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
-                ¿Cuál es la política de cancelación?
-              </button>
-            </h2>
-            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#acFaq">
-              <div class="accordion-body">
-                Varía según el proveedor y la temporada. Indicamos claramente plazos y cargos en la propuesta; buscamos opciones flexibles siempre que sea posible.
-              </div>
-            </div>
+          <p class="text-muted mb-0">Rutas de bajo impacto, gestión de residuos y proveedores que optimizan agua y energía.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="h-100 p-4 bg-white border rounded-4 shadow-sm">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-people text-success fs-4 me-2"></i>
+            <h5 class="mb-0">Comunidad</h5>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="q3">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
-                ¿Qué métodos de pago aceptan?
-              </button>
-            </h2>
-            <div id="a3" class="accordion-collapse collapse" data-bs-parent="#acFaq">
-              <div class="accordion-body">
-                Transferencia bancaria, tarjetas principales y pago parcial según hitos de reserva. Consulta por facilidades.
-              </div>
-            </div>
+          <p class="text-muted mb-0">Experiencias con actores locales, comercio justo y respeto al patrimonio cultural.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="h-100 p-4 bg-white border rounded-4 shadow-sm">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-shield-check text-success fs-4 me-2"></i>
+            <h5 class="mb-0">Seguridad</h5>
           </div>
+          <p class="text-muted mb-0">Protocolos actualizados, seguros disponibles y guías certificados en cada actividad.</p>
         </div>
       </div>
     </div>
 
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="80">
+        <h5 class="mb-3">Compromisos medibles</h5>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>80% de proveedores locales verificados.</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Prioridad a alojamientos con prácticas sostenibles.</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Brief de sensibilización cultural previo a cada viaje.</li>
+          <li class="mb-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Reportes de mejora continua post temporada.</li>
+        </ul>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="80">
+        <h5 class="mb-3">Bienestar del viajero</h5>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><i class="bi bi-heart-pulse-fill text-success me-2"></i>Asesoría de salud y clima según ruta.</li>
+          <li class="mb-2"><i class="bi bi-bag-check-fill text-success me-2"></i>Checklist de equipaje y documentos.</li>
+          <li class="mb-2"><i class="bi bi-geo-alt-fill text-success me-2"></i>Ritmos equilibrados: tiempo libre + actividades.</li>
+          <li class="mb-0"><i class="bi bi-headset text-success me-2"></i>Soporte 24/7 durante el viaje.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECCIÓN 3: PREGUNTAS FRECUENTES (con AOS) ========== -->
+<section id="faq" class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-4" data-aos="fade-up">
+      <div class="col text-center">
+        <h2 class="fw-bold">Preguntas frecuentes</h2>
+        <p class="text-muted mb-0">Resolvemos tus dudas más comunes</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="acFaq">
+          <!-- Agrega data-aos en cada item para efecto stagger -->
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="0">
+            <h2 class="accordion-header" id="q1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1">¿El seguro de viaje está incluido?</button>
+            </h2>
+            <div id="a1" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">Podemos incluirlo o cotizarlo aparte. Recomendamos contratarlo para mayor tranquilidad.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="60">
+            <h2 class="accordion-header" id="q2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">¿Cuál es la política de cancelación y cambios?</button>
+            </h2>
+            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">Depende del proveedor y temporada. Indicamos plazos/cargos en la propuesta y priorizamos opciones flexibles.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="120">
+            <h2 class="accordion-header" id="q3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">¿Qué métodos de pago aceptan?</button>
+            </h2>
+            <div id="a3" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">Transferencia bancaria, tarjetas principales y pagos por hitos. Consulta facilidades disponibles.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="180">
+            <h2 class="accordion-header" id="q4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">¿Pueden ayudarme con los vuelos?</button>
+            </h2>
+            <div id="a4" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">Sí, recomendamos rutas y horarios y coordinamos para que todo encaje.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="240">
+            <h2 class="accordion-header" id="q5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5">¿Es seguro viajar por estas rutas?</button>
+            </h2>
+            <div id="a5" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">Trabajamos con guías certificados y monitoreo constante. Ajustamos rutas ante cualquier alerta.</div>
+            </div>
+          </div>
+        </div>
+
+       
     <!-- CTA -->
     <div class="row mt-5">
       <div class="col text-center d-flex flex-column flex-sm-row justify-content-center gap-2">
@@ -450,6 +672,29 @@
         </a>
       </div>
     </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AOS JS (colócalo al final del body, después de bootstrap.bundle.js) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // ¡Importante! Llama AOS.init solo una vez.
+  AOS.init({
+    duration: 700,
+    offset: 80,
+    once: true,                // ← anima solo la primera vez
+    mirror: false,             // ← no “reproduce” al hacer scroll hacia arriba
+    startEvent: 'load',        // ← espera a que carguen imágenes (mejora el cálculo)
+    disableMutationObserver: true // ← evita re-cálculos que podrían re-animar
+  });
+
+  
+</script>
+
+
+
   </div>
 </section>
 
@@ -678,14 +923,7 @@
 
 
 
-  <!-- 2) Al final del <body>, carga JS de AOS y arranca -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: false,          // anima solo la primera vez que aparece
-      mirror: true        // no anima al hacer scroll hacia arriba
-    });
-  </script>
+  
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
