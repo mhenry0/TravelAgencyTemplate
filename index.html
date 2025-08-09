@@ -3,55 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Theme Toggle Dropup</title>
+  <title>Toucan Adventures</title>
 
   <!-- Bootstrap 5.3.7 CSS + Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <style>
-
-        /* Imagen de fondo en el navbar */
-    .navbar-custom {
-      background: url('./assets/hero.jpg') center/cover no-repeat; height: 700px;
-      
-        /* 1) Convertimos la navbar en un flex contenedor */
-  display: flex;
-  /* 2) Alineamos todo el contenido al inicio (arriba) */
-  align-items: flex-start;
-  /* 3) Un poco de espacio desde el top */
-  padding-top: 0.1rem;
-    }
-    /* Texto completamente blanco */
-    .navbar-custom .navbar-brand,
-    .navbar-custom .nav-link {
-      color: #fff !important;
-      font-size: 20px;
-      margin-top: -40px;
-       }
-    /* Subrayado ligero en hover */
-    .navbar-custom .nav-link:hover {
-      text-decoration: underline;
-    }
-
-
-/* Borra esto o coméntalo */
-.navbar-custom {
-  /* display: flex;
-     align-items: flex-start; */
-  background: url('./assets/hero.jpg') center/cover no-repeat;
-}
-
-  
-
-/* (Opcional) Reducir el padding vertical de los enlaces para que queden más pegados */
-.navbar-custom .navbar-nav .nav-link {
-  padding-top: 2.5rem;
-  padding-bottom: 0.25rem;
-}
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-body text-body">
 
@@ -59,13 +20,45 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-custom">
-  <div class="container">
-    <!-- Logo a la izquierda -->
-    <a class="navbar-brand pe-3" href="#">
-      <img src="./assets/logonewworld.png" alt="Toucan Adventures Logo" height="200">
-    </a>
+  
+<style>
+  .navbar-logo {
+  height: 100px;               /* Altura base */
+  display: block;              /* Para no romper inline-margins del link */
+  margin-right: 0;             /* El padding del <a> ya actúa como margen */
+  transform-origin: left center;
+  transition: transform .3s;
+}
 
+/* Si solo quieres agrandar permanentemente sin tocar padding/end */
+.navbar-logo {
+  transform: scale(2.5);      /* Aumenta al 125% */
+}
+
+/* O bien, al pasar el ratón… */
+.navbar-logo:hover {
+  transform: scale(2.5);
+}
+
+.nav-link {
+  transition: color .3s;      /* Transición suave al cambiar color */
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar-btn {
+  font-size: 18px;            /* Tamaño de fuente del botón */
+  font-weight: 500;           /* Peso de fuente del botón */
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top navbar-custom">
+  <div class="container">
+  <!-- Logo a la izquierda -->
+<a class="navbar-brand pe-3" href="./index.html">
+  <img src="./assets/darkbg.png" alt="Toucan Adventures Logo" class="navbar-logo">
+</a>
     <!-- Botón hamburguesa -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#mainNav" aria-controls="mainNav"
@@ -77,63 +70,88 @@
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#inicio">Inicio</a>
+          <a class="nav-link" href="./index.html">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#destinos">Destinos</a>
+          <a class="nav-link" href="./destinos.html">Destinos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
+          <a class="nav-link" href="./contacto.html">Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#sobre">Sobre</a>
+          <a class="nav-link" href="./sobre.html">Sobre</a>
         </li>
       </ul>
+      <!-- CTA: Cotizar ahora -->
+      <div class="ms-lg-3 mt-3 mt-lg-0">
+       
+
+        <!-- Opción 2: Página/Formulario interno -->
+        <a href="./contacto.html#cotizar" class="navbar-btn btn rounded-pill px-4" style="background-color: #1ba7c7;color: #fff;">
+          <i class="bi bi-clipboard2-check me-1"></i> Cotizar ahora
+        </a>
+      </div>
     </div>
+     
   </div>
 </nav>
 
 
 
-<!-- HTML -->
-<div class="hero-text">
-  <h1 class="hero-title">
-    EXPLORA<br>
-    SANTA <span class="hero-outline">MARTA,</span><br>
-    COLOMBIA.
-  </h1>
-  <p class="hero-sub">
-    Conozca con nosotros una de las regiones más emblemáticas del Caribe.
-  </p>
-  <a href="#destinos" class="btn btn-outline-light btn-lg rounded-pill hero-btn">
-    <i class="bi bi-globe2 me-2"></i>Ver Más
-  </a>
-</div>
+<!-- Hero Section con fondo, overlay y texto -->
+<section class="hero-section" >
+  <div class="hero-text">
+    <h1 class="hero-title" >
+      EXPLORA<br>
+      SANTA <span class="hero-outline">MARTA,</span><br>
+      COLOMBIA.
+    </h1>
+    <p class="hero-sub">
+      Conozca con nosotros una de las regiones más emblemáticas del Caribe.
+    </p>
+    <a href="#destinos" class="btn btn-outline-light btn-lg rounded-pill hero-btn">
+      <i class="bi bi-globe2 me-2"></i>Ver Más
+    </a>
+  </div>
+</section>
+
 <style>
-    /* CSS */
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: url('./assets/hero.jpg') center center / cover no-repeat;
+  height: 130vh;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+/* Texto encima del overlay */
 .hero-text {
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 8%;
   transform: translateY(-50%);
-  width: 90%;
   max-width: 600px;
   padding: 0 1rem;
-  box-sizing: border-box;
-  color: #fff;
   z-index: 2;
+  box-sizing: border-box;
 }
 
-/* Título con tamaño fluido */
+/* Título fluido */
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 8vw, 3rem);
   font-weight: 900;
   line-height: 1.1;
   text-transform: uppercase;
   margin-top: 6rem;
 }
-
-/* Outline para “MARTA,” */
+/* Outline en “MARTA,” */
 .hero-outline {
   color: transparent;
   -webkit-text-stroke: 2px #fff;
@@ -144,50 +162,34 @@
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.5;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-  margin: 0 0 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Botón con margen superior y sin sombra de texto */
+/* Botón */
 .hero-btn {
   text-shadow: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-btn:hover {
+  background-color: #fff;
+  color: #000;
 }
 
-/* Ajustes puntuales en tablets */
+/* Responsive: tablets */
 @media (max-width: 768px) {
-  .hero-text {
-    left: 5%;
-  }
+  .hero-text { left: 5%; }
 }
-
-/* Ajustes puntuales en móviles */
+/* Responsive: móviles */
 @media (max-width: 576px) {
   .hero-text {
     top: 60%;
     transform: translateY(-60%);
   }
-  .hero-title {
-    margin-bottom: 0.5rem;
-  }
-  .hero-sub {
-    margin-bottom: 1rem;
-  }
+  .hero-title { margin-bottom: 0.5rem; }
+  .hero-sub   { margin-bottom: 1rem; }
 }
-
-/* Ajustes puntuales en móviles */
-@media (max-width: 420px) {
-  .hero-text {
-    top: 60%;
-    transform: translateY(-60%);
-  }
-  .hero-title {
-    margin-bottom: 0.5rem;
-  }
-  .hero-sub {
-    margin-bottom: 1rem;
-  }
-}
-
 </style>
+
 
 
 
@@ -195,7 +197,7 @@
  <div class="wave-container"></div>
 
 <style>.wave-container {  
-  height: 40vh;
+  height: 35vh;
   background-color: #0485a2;
   position: relative;
 }
@@ -232,24 +234,142 @@
 <section id="inicio" class="py-0 bg-light">
   <div class="container">
     <!-- Título y texto de bienvenida -->
-    <div class="row justify-content-center text-center mb-5">
+    <div class="row justify-content-center text-center mb-5" data-aos="zoom-in" data-aos-duration="1500">
         
       <div class="col-lg-7">
-            <img src="./assets/darkbg.png" alt="Wave Divider" style="width: 50%;">
-<p class="lead text-muted" style="width: 100%;">
-  En Toucan Adventures diseñamos cada viaje como una historia única, pensada para que descubras los rincones más fascinantes de Colombia desde la perspectiva local.  
-  Ya sea explorando playas vírgenes en la costa Caribe, adentrándote en la selva amazónica o recorriendo la ruta cafetera, nuestros paquetes a tu medida se adaptan a tus intereses y ritmo de viaje.  
-  Contarás con atención personalizada en cada etapa: guías expertos que comparten sus tradiciones, transporte seguro y alojamientos seleccionados por su auténtica hospitalidad.  
-  Además, integramos las mejores historias de la cultura colombiana —entre leyendas, sabores y paisajes— para que tu experiencia sea tan emocionante como enriquecedora.  
-  Con soporte 24/7 y opciones flexibles de reserva, garantizamos que tu aventura no solo sea inolvidable, sino también completamente segura y libre de preocupaciones.
+            <img src="./assets/darkbg.png" alt="Wave Divider" style="width: 45%;">
+<p class="lead">
+  Diseñamos viajes a medida por Colombia con enfoque local: guías expertos, transporte seguro y alojamientos auténticos.
+  Integramos cultura, naturaleza y gastronomía, con soporte 24/7 y reservas flexibles para una experiencia inolvidable y sin preocupaciones.
 </p>
+
 
       </div>
     </div>
 
     <!-- Tres destacados -->
+
+    
+<!-- ====== CONTADOR (Pro) ====== -->
+<section id="contador" class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold display-6 text-center">Nuestros números</h2>
+        <p class="text-muted mb-0">Resultados que respaldan tu viaje</p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      <!-- Itinerarios -->
+      <div class="col-12 col-md-4">
+        <div class="stat-card h-100 p-4 p-md-5 text-center bg-light border rounded-4 ">
+          <div class="icon-badge mx-auto mb-3">
+            <i class="bi bi-map"></i>
+          </div>
+          <div class="stat-number display-4 fw-bold" data-target="1000" data-prefix="+">0</div>
+          <div class="stat-label">itinerarios</div>
+        </div>
+      </div>
+
+      <!-- Clientes satisfechos -->
+      <div class="col-12 col-md-4">
+        <div class="stat-card h-100 p-4 p-md-5 text-center bg-light border rounded-4 ">
+          <div class="icon-badge mx-auto mb-3">
+            <i class="bi bi-airplane"></i>
+          </div>
+          <div class="stat-number display-4 fw-bold" data-target="2500" data-prefix="+">0</div>
+          <div class="stat-label">clientes satisfechos</div>
+        </div>
+      </div>
+
+      <!-- Aliados locales -->
+      <div class="col-12 col-md-4">
+        <div class="stat-card h-100 p-4 p-md-5 text-center bg-light border rounded-4">
+          <div class="icon-badge mx-auto mb-3">
+            <i class="bi bi-gear"></i>
+          </div>
+          <div class="stat-number display-4 fw-bold" data-target="50" data-prefix="+">0</div>
+          <div class="stat-label">aliados locales</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Badge del icono con degradado sutil y borde fino */
+  .icon-badge{
+    width: 64px; height: 64px; border-radius: 14px;
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(135deg, #198754, #22a06a);
+    color:#fff; 
+    border: 1px solid rgba(255,255,255,.25);
+  }
+  .icon-badge i{ font-size: 1.5rem; line-height:1; }
+
+  /* Tarjeta: hover muy discreto en desktop */
+  @media (hover:hover){
+    .stat-card{ transition: transform .18s ease, box-shadow .18s ease; }
+    .stat-card:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.06); }
+  }
+
+  /* Tipografía del número */
+  #contador .stat-number{ color:#212529; letter-spacing:-.5px; }
+  #contador .stat-label{ font-size: .975rem; }
+
+  /* Ajustes en móviles */
+  @media (max-width: 576px){
+    #contador .display-4{ font-size: 2.3rem; }
+    .icon-badge{ width:56px; height:56px; border-radius:12px; }
+  }
+</style>
+
+<script>
+  (function(){
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = document.querySelectorAll('#contador .stat-number');
+    const formatter = new Intl.NumberFormat('es-CR'); // cambia la locale si prefieres
+
+    function animate(el){
+      const target = parseInt(el.dataset.target || '0', 10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      if (prefersReduced){ el.textContent = prefix + formatter.format(target) + suffix; return; }
+
+      const duration = 1400;
+      const startTime = performance.now();
+      const startVal = 0;
+
+      function tick(now){
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const current = Math.floor(startVal + (target - startVal) * eased);
+        el.textContent = prefix + formatter.format(current) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Dispara al entrar al viewport (solo una vez)
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting){
+            animate(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+      els.forEach(el => io.observe(el));
+    } else {
+      els.forEach(animate);
+    }
+  })();
+</script>
+
      
-    <div class="row g-4">
+    <div class="row g-4 my-5">
                 <h2 class="fw-bold display-6 text-center">¿Por qué elegirnos?</h2>
 
     <!-- …tu contenido previo… -->
@@ -282,7 +402,7 @@
     <!-- Llamada a la acción -->
     <div class="row mt-5">
       <div class="col text-center">
-        <a href="#destinos" class="btn btn-success btn-lg rounded-pill px-4">
+        <a href="./destinos.html" class="btn btn-success btn-lg rounded-pill px-4">
           Inicia tu Aventura Aquí
           <i class="bi bi-arrow-right ms-2"></i>
         </a>
@@ -325,7 +445,7 @@
             <p class="card-text">
               Ciudad amurallada y vibrante vida nocturna junto al mar Caribe.
             </p>
-             <a href="#" class="btn btn-outline-dark btn-lg rounded-pill hero-btn">
+             <a href="./destinos.html" class="btn btn-outline-dark btn-lg rounded-pill hero-btn">
     <i class="bi bi-globe2 me-2"></i>Ver Itinerario
   </a>
           </div>
@@ -347,7 +467,7 @@
             <p class="card-text">
               La “Ciudad de la Eterna Primavera” que combina modernidad y cultura.
             </p>
-                <a href="#" class="btn btn-outline-dark btn-lg rounded-pill hero-btn">
+                <a href="./destinos.html" class="btn btn-outline-dark btn-lg rounded-pill hero-btn">
     <i class="bi bi-globe2 me-2"></i>Ver Itinerario
   </a>
           </div>
@@ -369,7 +489,7 @@
             <p class="card-text">
               Punto de partida al Parque Tayrona y sus playas de ensueño.
             </p>
-                 <a href="#" class="btn btn-outline-dark btn-lg rounded-pill hero-btn">
+                 <a href="./destinos.html" class="btn btn-outline-dark btn-lg rounded-pill hero-btn">
     <i class="bi bi-globe2 me-2"></i>Ver Itinerario
   </a>
           </div>
@@ -379,7 +499,25 @@
     </div><!-- /.row -->
   </div><!-- /.container -->
 </section>
-<!-- /SECCIÓN DESTINOS -->
+<style>
+
+  /* Transición suave */
+.hero-btn {
+  transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s;
+}
+
+/* Invertir colores al hover/focus */
+.hero-btn.btn-outline-dark:hover,
+.hero-btn.btn-outline-dark:focus {
+  background-color: #198754;   /* fondo dark */
+  color: #fff;                 /* texto blanco */
+  border-color: #198754;       /* borde dark */
+}
+
+/* Asegura que el ícono siga el color del texto */
+.hero-btn i { color: inherit; }
+
+</style>
 
 
 
@@ -387,7 +525,15 @@
 
 
 
-<!-- ====== SECCIÓN TESTIMONIOS ====== -->
+
+
+
+
+
+
+
+
+<!-- ====== SECCIÓN TESTIMONIOS (botón único) ====== -->
 <section id="reviews" class="py-5 bg-light">
   <div class="container">
     <!-- Título -->
@@ -404,8 +550,7 @@
         <div class="card h-100 border-0">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
-           <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+              <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
               <div>
                 <h6 class="mb-1">María López</h6>
                 <div class="text-warning">
@@ -424,8 +569,7 @@
         <div class="card h-100 border-0">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
-             <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+              <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
               <div>
                 <h6 class="mb-1">Carlos Méndez</h6>
                 <div class="text-warning">
@@ -444,8 +588,7 @@
         <div class="card h-100 border-0">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
-          <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+              <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
               <div>
                 <h6 class="mb-1">Ana García</h6>
                 <div class="text-warning">
@@ -462,15 +605,14 @@
     </div>
 
     <!-- Reviews adicionales (ocultos inicialmente) -->
-    <div class="collapse" id="moreReviews">
-      <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+    <div class="collapse mt-4" id="moreReviews">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Review 4 -->
         <div class="col">
           <div class="card h-100 border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-              <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+                <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
                 <div>
                   <h6 class="mb-1">Luis Pérez</h6>
                   <div class="text-warning">
@@ -489,8 +631,7 @@
           <div class="card h-100 border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-               <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+                <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
                 <div>
                   <h6 class="mb-1">Sofía Torres</h6>
                   <div class="text-warning">
@@ -509,8 +650,7 @@
           <div class="card h-100 border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-               <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+                <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
                 <div>
                   <h6 class="mb-1">Jorge Ramírez</h6>
                   <div class="text-warning">
@@ -529,8 +669,7 @@
           <div class="card h-100 border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-               <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+                <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
                 <div>
                   <h6 class="mb-1">Luisa Fernández</h6>
                   <div class="text-warning">
@@ -549,8 +688,7 @@
           <div class="card h-100 border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-            <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
-
+                <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
                 <div>
                   <h6 class="mb-1">Daniela Castro</h6>
                   <div class="text-warning">
@@ -569,7 +707,7 @@
           <div class="card h-100 border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
-                <i class="bi bi-person-circle me-3" style="font-size: 2.5rem; color: #6c63ff;"></i>
+                <i class="bi bi-person-circle me-3" style="font-size:2.5rem; color:#6c63ff;"></i>
                 <div>
                   <h6 class="mb-1">Pedro Morales</h6>
                   <div class="text-warning">
@@ -586,37 +724,68 @@
       </div>
     </div>
 
-    <!-- Botón Ver Más / Ver Menos -->
+    <!-- Botón ÚNICO Ver Más / Ver Menos -->
     <div class="text-center mt-4">
       <button
         id="toggleReviewsBtn"
-        class="btn btn-primary"
+        class="btn btn-success"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#moreReviews"
         aria-expanded="false"
-        aria-controls="moreReviews"
-      >
-        Ver Más
+        aria-controls="moreReviews">
+        <i class="bi bi-chevron-down me-1"></i> Ver Más
       </button>
     </div>
   </div>
 </section>
 
-<!-- Script para cambiar texto del botón -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var collapseEl = document.getElementById('moreReviews');
-    var btn = document.getElementById('toggleReviewsBtn');
+<!-- Bootstrap JS Bundle (Popper + Collapse) -->
 
-    collapseEl.addEventListener('shown.bs.collapse', function () {
-      btn.textContent = 'Ver Menos';
+<!-- Script: un solo botón que abre/cierra y cambia texto/icono -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('toggleReviewsBtn');
+    const collapseEl = document.getElementById('moreReviews');
+    const collapse = new bootstrap.Collapse(collapseEl, { toggle: false });
+
+    function setLabel(open) {
+      btn.innerHTML = open
+        ? '<i class="bi bi-chevron-up me-1"></i> Ver Menos'
+        : '<i class="bi bi-chevron-down me-1"></i> Ver Más';
+      btn.setAttribute('aria-expanded', open);
+    }
+
+    // Estado inicial
+    setLabel(false);
+
+    // Toggle manual con un solo botón
+    btn.addEventListener('click', () => {
+      const isOpen = collapseEl.classList.contains('show');
+      if (isOpen) { collapse.hide(); setLabel(false); }
+      else        { collapse.show(); setLabel(true);  }
     });
-    collapseEl.addEventListener('hidden.bs.collapse', function () {
-      btn.textContent = 'Ver Más';
-    });
+
+    // (Opcional) Sincroniza si se abre/cierra por otros medios
+    collapseEl.addEventListener('shown.bs.collapse', () => setLabel(true));
+    collapseEl.addEventListener('hidden.bs.collapse', () => setLabel(false));
   });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -688,7 +857,6 @@
           <h6 class="fw-bold">Síguenos</h6>
           <a href="#" class="text-dark me-3 fs-5"><i class="bi bi-facebook"></i></a>
           <a href="#" class="text-dark me-3 fs-5"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-dark fs-5"><i class="bi bi-twitter"></i></a>
         </div>
       </div>
     </div>
@@ -792,6 +960,51 @@
 
 
 
+<!-- (Opcional) Bootstrap Icons si aún no los cargas -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Botón flotante WhatsApp -->
+<a
+  href="https://wa.me/50612345678?text=Hola%20Toucan%20Adventures,%20quiero%20una%20cotizaci%C3%B3n."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chatear por WhatsApp"
+>
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366; /* WhatsApp */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2);
+    z-index: 1055; /* por encima de la navbar */
+    transition: transform .2s, box-shadow .2s, background-color .2s;
+    text-decoration: none;
+  }
+  .whatsapp-float .bi{ font-size: 1.75rem; line-height: 1; }
+  .whatsapp-float:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(0,0,0,.25);
+    background: #1ebe5d; /* tono más oscuro en hover */
+    color: #fff;
+  }
+
+  /* Separación extra si usas un footer sticky o en móviles muy bajos */
+  @media (max-width: 576px){
+    .whatsapp-float{ right: 14px; bottom: 14px; width: 54px; height: 54px; }
+  }
+</style>
 
 
 <footer class="text-light" 
@@ -880,8 +1093,10 @@
       mirror: true        // no anima al hacer scroll hacia arriba
     });
   </script>
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
- 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+
 </body>
 </html>

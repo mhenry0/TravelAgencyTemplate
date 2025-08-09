@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Toucan Adventures</title>
+
+  <!-- Bootstrap 5.3.7 CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  
+</head>
+<body class="bg-body text-body">
+
+
+
+
+
+  
+<style>
+  .navbar-logo {
+  height: 100px;               /* Altura base */
+  display: block;              /* Para no romper inline-margins del link */
+  margin-right: 0;             /* El padding del <a> ya actúa como margen */
+  transform-origin: left center;
+  transition: transform .3s;
+}
+
+/* Si solo quieres agrandar permanentemente sin tocar padding/end */
+.navbar-logo {
+  transform: scale(2.5);      /* Aumenta al 125% */
+}
+
+/* O bien, al pasar el ratón… */
+.navbar-logo:hover {
+  transform: scale(2.5);
+}
+
+.nav-link {
+  transition: color .3s;      /* Transición suave al cambiar color */
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar-btn {
+  font-size: 18px;            /* Tamaño de fuente del botón */
+  font-weight: 500;           /* Peso de fuente del botón */
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top navbar-custom">
+  <div class="container">
+  <!-- Logo a la izquierda -->
+<a class="navbar-brand pe-3" href="./index.html">
+  <img src="./assets/darkbg.png" alt="Toucan Adventures Logo" class="navbar-logo">
+</a>
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav" aria-controls="mainNav"
+            aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./destinos.html">Destinos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contacto.html">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sobre.html">Sobre</a>
+        </li>
+      </ul>
+      <!-- CTA: Cotizar ahora -->
+      <div class="ms-lg-3 mt-3 mt-lg-0">
+       
+
+        <!-- Opción 2: Página/Formulario interno -->
+        <a href="./contacto.html#cotizar" class="navbar-btn btn rounded-pill px-4" style="background-color: #1ba7c7;color: #fff;">
+          <i class="bi bi-clipboard2-check me-1"></i> Cotizar ahora
+        </a>
+      </div>
+    </div>
+     
+  </div>
+</nav>
+
+
+
+<!-- Hero Section con fondo, overlay y texto -->
+<section class="hero-section" >
+  <div class="hero-text">
+    <h1 class="hero-title" >
+      SOMOS UNA AGENCIA<br>
+      DE VIAJES<span class="hero-outline"> EN COLOMBIA,</span><br>
+      CONOCENOS.
+    </h1>
+    <p class="hero-sub">
+      Te invitamos a descubrir Colombia con Toucan Adventures.
+      Diseñamos viajes únicos, seguros y auténticos, con un enfoque local y personalizado.
+    </p>
+    <a href="#destinos" class="btn btn-outline-light btn-lg rounded-pill hero-btn">
+      <i class="bi bi-globe2 me-2"></i>Ver Paquetes
+    </a>
+  </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: url('./assets/sobrebg.jpg') center center / cover no-repeat;
+  height: 130vh;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+/* Texto encima del overlay */
+.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  padding: 0 1rem;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Título fluido */
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-top: 6rem;
+}
+/* Outline en “MARTA,” */
+.hero-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* Subtítulo fluido con sombra */
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.5;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  margin-bottom: 1.5rem;
+}
+
+/* Botón */
+.hero-btn {
+  text-shadow: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsive: tablets */
+@media (max-width: 768px) {
+  .hero-text { left: 5%; }
+}
+/* Responsive: móviles */
+@media (max-width: 576px) {
+  .hero-text {
+    top: 60%;
+    transform: translateY(-60%);
+  }
+  .hero-title { margin-bottom: 0.5rem; }
+  .hero-sub   { margin-bottom: 1rem; }
+}
+</style>
+
+
+
+
+
+ <div class="wave-container"></div>
+
+<style>.wave-container {  
+  height: 35vh;
+  background-color: #0485a2;
+  position: relative;
+}
+
+.wave-container::before {   
+  content: "";
+  width: 100%;
+  height: 23px;
+  position: absolute;
+  bottom: -0.3%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 8vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 22L33 19C82 13 133 14 200 29C267 44 333 67 400 70C467 74 533 59 600 40C667 22 733 0 800 0C867 0 933 22 1000 29C1067 37 1133 29 1167 26L1200 22V134H1167C1133 134 1067 134 1000 134C933 134 867 134 800 134C733 134 667 134 600 134C533 134 467 134 400 134C333 134 267 134 200 134C133 134 67 134 33 134H0V22.332Z' fill='%23FFF5EE'/></svg>");
+}
+
+@media(max-width:850px) {
+  .wave-container::before {    
+    height: 11.5px
+  }  
+}</style>
+
+
+
+
+
+
+
+<!-- ========== SECCIÓN SOBRE (AMPLIADA) ========== -->
+<section id="sobre" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <!-- Columna texto principal -->
+      <div class="col-lg-6">
+        <span class="badge bg-success-subtle text-success mb-2">
+          <i class="bi bi-patch-check-fill me-1"></i> Desde 2015
+        </span>
+        <h2 class="display-6 fw-bold">
+          Sobre <span class="text-success">Toucan Adventures</span>
+        </h2>
+
+        <!-- Misión / Enfoque -->
+        <p class="lead text-muted mb-3">
+          Diseñamos experiencias auténticas en Colombia con enfoque local, seguridad y servicio personalizado.
+          Combinamos logística impecable con guías expertos para que solo te preocupes por disfrutar.
+        </p>
+        <p class="text-muted">
+          Nuestro equipo está basado en la región y trabaja con comunidades y aliados certificados. Cada itinerario es
+          curado con estándares de seguridad, sostenibilidad y confort, manteniendo la esencia del destino.
+        </p>
+
+        <!-- Métricas clave -->
+        <div class="row g-3 mt-2">
+          <div class="col-6">
+            <div class="p-3 border rounded-4 h-100">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-people-fill fs-3 text-success me-2"></i>
+                <div>
+                  <div class="fw-bold fs-5">+3,500</div>
+                  <small class="text-muted">viajeros felices</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 border rounded-4 h-100">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-geo-alt-fill fs-3 text-success me-2"></i>
+                <div>
+                  <div class="fw-bold fs-5">+25</div>
+                  <small class="text-muted">rutas operadas</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nuestros valores -->
+        <h5 class="mt-4">Nuestros valores</h5>
+        <ul class="list-unstyled mb-4">
+          <li class="d-flex align-items-start mb-2">
+            <i class="bi bi-check-circle-fill text-success me-2"></i>
+            <span>Itinerarios flexibles y 100% a medida</span>
+          </li>
+          <li class="d-flex align-items-start mb-2">
+            <i class="bi bi-shield-check text-success me-2"></i>
+            <span>Seguridad y respaldo 24/7 durante el viaje</span>
+          </li>
+          <li class="d-flex align-items-start mb-2">
+            <i class="bi bi-heart-fill text-success me-2"></i>
+            <span>Turismo responsable y apoyo a comunidades locales</span>
+          </li>
+          <li class="d-flex align-items-start">
+            <i class="bi bi-star-fill text-success me-2"></i>
+            <span>Alta satisfacción (4.8/5 en reseñas)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna imagen / video -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+          <img src="./assets/agenciadeviajes.jpg" alt="Nuestro equipo en ruta" class="w-100 h-100" style="object-fit: cover;">
+        </div>
+
+        <!-- Aliados / Certificaciones -->
+        <div class="mt-4">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-patch-check-fill text-success me-2"></i>
+            <strong>Certificaciones y aliados</strong>
+          </div>
+          <div class="brand-logos d-flex align-items-center gap-3 flex-wrap" >
+            <!-- Reemplaza por tus logos -->
+            <img src="./assets/cert.jpg" alt="Aliado 1">
+            <img src="./assets/cert.jpg" alt="Aliado 2">
+            <img src="./assets/cert.jpg" alt="Aliado 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cómo trabajamos (acordeón de pasos) -->
+    <div class="row g-4 mt-5">
+      <div class="col-lg-6">
+        <h5 class="mb-3">Cómo planificamos tu viaje</h5>
+        <div class="accordion" id="acPlan">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="st1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cp1" aria-expanded="true" aria-controls="cp1">
+                1) Brief inicial y preferencias
+              </button>
+            </h2>
+            <div id="cp1" class="accordion-collapse collapse show" aria-labelledby="st1" data-bs-parent="#acPlan">
+              <div class="accordion-body">
+                Definimos fechas, presupuesto, intereses (naturaleza, cultura, gastronomía) y ritmo del viaje.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="st2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp2" aria-expanded="false" aria-controls="cp2">
+                2) Propuesta y ajustes
+              </button>
+            </h2>
+            <div id="cp2" class="accordion-collapse collapse" aria-labelledby="st2" data-bs-parent="#acPlan">
+              <div class="accordion-body">
+                Te enviamos un itinerario a medida con opciones de hotel, actividades y traslados. Ajustamos hasta que quede perfecto.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="st3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp3" aria-expanded="false" aria-controls="cp3">
+                3) Confirmación y logística
+              </button>
+            </h2>
+            <div id="cp3" class="accordion-collapse collapse" aria-labelledby="st3" data-bs-parent="#acPlan">
+              <div class="accordion-body">
+                Reservamos con aliados locales certificados y te compartimos tu pack de viaje con horarios, contactos y recomendaciones.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="st4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cp4" aria-expanded="false" aria-controls="cp4">
+                4) Acompañamiento 24/7
+              </button>
+            </h2>
+            <div id="cp4" class="accordion-collapse collapse" aria-labelledby="st4" data-bs-parent="#acPlan">
+              <div class="accordion-body">
+                Monitoreamos tu ruta y estamos disponibles para cualquier cambio, emergencia o recomendación en tiempo real.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sostenibilidad + FAQ -->
+      <div class="col-lg-6">
+        <h5 class="mb-3">Sostenibilidad y bienestar</h5>
+        <ul class="list-unstyled mb-4">
+          <li class="d-flex align-items-start mb-2">
+            <i class="bi bi-leaf text-success me-2"></i>
+            <span>Operación con proveedores que cumplen prácticas ambientales (residuos, agua y energía).</span>
+          </li>
+          <li class="d-flex align-items-start mb-2">
+            <i class="bi bi-people text-success me-2"></i>
+            <span>Experiencias con comunidades locales y respeto por su patrimonio cultural.</span>
+          </li>
+          <li class="d-flex align-items-start">
+            <i class="bi bi-briefcase-fill text-success me-2"></i>
+            <span>Seguro de responsabilidad y protocolos de seguridad actualizados.</span>
+          </li>
+        </ul>
+
+        <h5 class="mb-3">Preguntas frecuentes</h5>
+        <div class="accordion" id="acFaq">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="q1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
+                ¿El seguro de viaje está incluido?
+              </button>
+            </h2>
+            <div id="a1" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">
+                Ofrecemos planes con y sin seguro. Recomendamos incluirlo; podemos cotizarlo y gestionarlo por ti.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="q2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+                ¿Cuál es la política de cancelación?
+              </button>
+            </h2>
+            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">
+                Varía según el proveedor y la temporada. Indicamos claramente plazos y cargos en la propuesta; buscamos opciones flexibles siempre que sea posible.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="q3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+                ¿Qué métodos de pago aceptan?
+              </button>
+            </h2>
+            <div id="a3" class="accordion-collapse collapse" data-bs-parent="#acFaq">
+              <div class="accordion-body">
+                Transferencia bancaria, tarjetas principales y pago parcial según hitos de reserva. Consulta por facilidades.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="row mt-5">
+      <div class="col text-center d-flex flex-column flex-sm-row justify-content-center gap-2">
+        <a href="./destinos.html" class="btn btn-outline-dark rounded-pill px-4">
+          <i class="bi bi-globe2 me-1"></i> Ver destinos
+        </a>
+        <a href="./assets/brochure.pdf" class="btn btn-outline-success rounded-pill px-4" target="_blank" rel="noopener">
+          <i class="bi bi-file-earmark-arrow-down me-1"></i> Descargar brochure
+        </a>
+        <a href="https://wa.me/50612345678?text=Hola%20Toucan%20Adventures,%20quiero%20planear%20mi%20viaje%20a%20Colombia."
+           class="btn btn-success rounded-pill px-4" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp me-1"></i> Cotizar ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Estilos extra para logos (ajusta a tu diseño) -->
+<style>
+  .brand-logos img{
+    max-height: 36px;
+    opacity: .85;
+    filter: grayscale(100%);
+    transition: opacity .2s, filter .2s, transform .2s;
+  }
+  .brand-logos img:hover{
+    opacity: 1;
+    filter: none;
+    transform: translateY(-2px);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- (Opcional) Bootstrap Icons si aún no los cargas -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Botón flotante WhatsApp -->
+<a
+  href="https://wa.me/50612345678?text=Hola%20Toucan%20Adventures,%20quiero%20una%20cotizaci%C3%B3n."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chatear por WhatsApp"
+>
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366; /* WhatsApp */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2);
+    z-index: 1055; /* por encima de la navbar */
+    transition: transform .2s, box-shadow .2s, background-color .2s;
+    text-decoration: none;
+  }
+  .whatsapp-float .bi{ font-size: 1.75rem; line-height: 1; }
+  .whatsapp-float:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(0,0,0,.25);
+    background: #1ebe5d; /* tono más oscuro en hover */
+    color: #fff;
+  }
+
+  /* Separación extra si usas un footer sticky o en móviles muy bajos */
+  @media (max-width: 576px){
+    .whatsapp-float{ right: 14px; bottom: 14px; width: 54px; height: 54px; }
+  }
+</style>
+
+
+<footer class="text-light" 
+        style="background: url('./assets/footerbg.jpg') center/cover no-repeat;">
+  <div class="container py-5">
+    <div class="row gy-4 align-items-start">
+      
+      <!-- 1. Descripción + Logo -->
+      <div class="col-12 col-md-4 text-center text-md-start">
+        <img src="./assets/logonewworld.png" 
+             alt="Toucan Adventures Logo"
+             class="img-fluid mb-3"
+             style="max-height: 120px;">
+        <p class="small">
+          En Toucan Adventures diseñamos experiencias de viaje inolvidables.  
+          Descubre destinos únicos, con el respaldo de guías expertos y atención personalizada.
+        </p>
+      </div>
+
+      <!-- 2. Enlaces Rápidos -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold text-uppercase mb-3">Enlaces</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#inicio" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="#destinos" class="text-light text-decoration-none">Destinos</a></li>
+          <li><a href="#contacto" class="text-light text-decoration-none">Contacto</a></li>
+          <li><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Legal -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold text-uppercase mb-3">Legal</h6>
+        <ul class="list-unstyled small">
+          <li><a href="/terminos" class="text-light text-decoration-none">Términos y Condiciones</a></li>
+          <li><a href="/privacidad" class="text-light text-decoration-none">Política de Privacidad</a></li>
+          <li><a href="/cookies" class="text-light text-decoration-none">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contacto -->
+      <div class="col-12 col-md-4 text-center text-md-start">
+        <h6 class="fw-bold text-uppercase mb-3">Contacto</h6>
+        <ul class="list-unstyled small">
+          <li><i class="bi bi-geo-alt-fill me-2"></i> San José, Costa Rica</li>
+          <li><i class="bi bi-telephone-fill me-2"></i> +506 1234-5678</li>
+          <li><i class="bi bi-envelope-fill me-2"></i> info@toucanadventures.tours</li>
+        </ul>
+        <div class="mt-3" >
+          <a href="https://facebook.com" target="_blank" class="text-light me-3 fs-5" style="text-decoration: none;">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="text-light me-3 fs-5" style="text-decoration: none;">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+
+    <hr class="border-secondary my-4">
+
+    <div class="d-flex flex-column flex-md-row 
+                align-items-center 
+                justify-content-center justify-content-md-between 
+                gap-3 py-3 small">
+      <div>© 2025 Toucan Adventures. Todos los derechos reservados.</div>
+      <div>
+        Desarrollado por 
+        <a href="https://nativainnovations.com" class="text-light text-decoration-none">
+          Nativa Innovations Web Development Agency
+        </a>
+      </div>
+    </div>
+  </div><!-- /.container -->
+</footer>
+
+
+
+
+  <!-- 2) Al final del <body>, carga JS de AOS y arranca -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,          // anima solo la primera vez que aparece
+      mirror: true        // no anima al hacer scroll hacia arriba
+    });
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

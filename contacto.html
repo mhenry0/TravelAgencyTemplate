@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Toucan Adventures</title>
+
+  <!-- Bootstrap 5.3.7 CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  
+</head>
+<body class="bg-body text-body">
+
+
+
+
+
+  
+<style>
+  .navbar-logo {
+  height: 100px;               /* Altura base */
+  display: block;              /* Para no romper inline-margins del link */
+  margin-right: 0;             /* El padding del <a> ya actúa como margen */
+  transform-origin: left center;
+  transition: transform .3s;
+}
+
+/* Si solo quieres agrandar permanentemente sin tocar padding/end */
+.navbar-logo {
+  transform: scale(2.5);      /* Aumenta al 125% */
+}
+
+/* O bien, al pasar el ratón… */
+.navbar-logo:hover {
+  transform: scale(2.5);
+}
+
+.nav-link {
+  transition: color .3s;      /* Transición suave al cambiar color */
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar-btn {
+  font-size: 18px;            /* Tamaño de fuente del botón */
+  font-weight: 500;           /* Peso de fuente del botón */
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top navbar-custom">
+  <div class="container">
+  <!-- Logo a la izquierda -->
+<a class="navbar-brand pe-3" href="./index.html">
+  <img src="./assets/darkbg.png" alt="Toucan Adventures Logo" class="navbar-logo">
+</a>
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav" aria-controls="mainNav"
+            aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./destinos.html">Destinos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contacto.html">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sobre.html">Sobre</a>
+        </li>
+      </ul>
+      <!-- CTA: Cotizar ahora -->
+      <div class="ms-lg-3 mt-3 mt-lg-0">
+       
+
+        <!-- Opción 2: Página/Formulario interno -->
+        <a href="./contacto.html#cotizar" class="navbar-btn btn rounded-pill px-4" style="background-color: #1ba7c7;color: #fff;">
+          <i class="bi bi-clipboard2-check me-1"></i> Cotizar ahora
+        </a>
+      </div>
+    </div>
+     
+  </div>
+</nav>
+
+
+
+<!-- Hero Section con fondo, overlay y texto -->
+<section class="hero-section" >
+  <div class="hero-text">
+    <h1 class="hero-title" >
+      ATENCIÓN <br>
+      DISPONIBLE <span class="hero-outline">24/7,</span><br>
+      ESCRIBENOS.
+    </h1>
+    <p class="hero-sub">
+      Aquí encontrarás nuestros medios de contacto.
+    </p>
+    <a href="#destinos" class="btn btn-outline-light btn-lg rounded-pill hero-btn">
+      <i class="bi bi-globe2 me-2"></i>Ver Más
+    </a>
+  </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: url('./assets/cartagena.jpg') center center / cover no-repeat;
+  height: 130vh;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+/* Texto encima del overlay */
+.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  padding: 0 1rem;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Título fluido */
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-top: 6rem;
+}
+/* Outline en “MARTA,” */
+.hero-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* Subtítulo fluido con sombra */
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.5;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  margin-bottom: 1.5rem;
+}
+
+/* Botón */
+.hero-btn {
+  text-shadow: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsive: tablets */
+@media (max-width: 768px) {
+  .hero-text { left: 5%; }
+}
+/* Responsive: móviles */
+@media (max-width: 576px) {
+  .hero-text {
+    top: 60%;
+    transform: translateY(-60%);
+  }
+  .hero-title { margin-bottom: 0.5rem; }
+  .hero-sub   { margin-bottom: 1rem; }
+}
+</style>
+
+
+
+
+
+ <div class="wave-container"></div>
+
+<style>.wave-container {  
+  height: 35vh;
+  background-color: #0485a2;
+  position: relative;
+}
+
+.wave-container::before {   
+  content: "";
+  width: 100%;
+  height: 23px;
+  position: absolute;
+  bottom: -0.3%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 8vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 22L33 19C82 13 133 14 200 29C267 44 333 67 400 70C467 74 533 59 600 40C667 22 733 0 800 0C867 0 933 22 1000 29C1067 37 1133 29 1167 26L1200 22V134H1167C1133 134 1067 134 1000 134C933 134 867 134 800 134C733 134 667 134 600 134C533 134 467 134 400 134C333 134 267 134 200 134C133 134 67 134 33 134H0V22.332Z' fill='%23FFF5EE'/></svg>");
+}
+
+@media(max-width:850px) {
+  .wave-container::before {    
+    height: 11.5px
+  }  
+}</style>
+
+
+
+
+<!-- ========== SECCIÓN CONTACTO ========== -->
+<section id="contacto" class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-6 fw-bold">Contacto</h2>
+        <p class="text-muted mb-0">¿Listo para cotizar o tienes preguntas? Escríbenos y te respondemos rápido.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Tarjetas de contacto -->
+      <div class="col-lg-4">
+        <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+          <h5 class="mb-3">Canales directos</h5>
+
+          <div class="d-flex align-items-start mb-3">
+            <div class="icon-circle bg-success text-white me-3">
+              <i class="bi bi-whatsapp"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">WhatsApp</div>
+              <small>
+              <a href="https://wa.me/50612345678?text=Hola%20Toucan%20Adventures,%20quiero%20una%20cotizaci%C3%B3n."
+                 target="_blank" rel="noopener" style="text-decoration: none; color: #000;">+506 1234 5678</a>
+                 </small>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start mb-3">
+            <div class="icon-circle bg-danger text-white me-3">
+              <i class="bi bi-envelope-fill"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Email</div>
+              <small><a href="mailto:info@toucanadventures.com" style="text-decoration: none; color: #000;">info@toucanadventures.com</a></small>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start">
+            <div class="icon-circle bg-dark text-white me-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Oficina</div>
+              <small>San José, Costa Rica</small>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <a href="https://wa.me/50612345678?text=Hola%20Toucan%20Adventures,%20quiero%20una%20cotizaci%C3%B3n."
+             target="_blank" rel="noopener"
+             class="btn btn-success w-100 rounded-pill">
+            <i class="bi bi-whatsapp me-1"></i> Cotizar ahora por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="col-lg-8">
+        <div class="p-4 bg-white rounded-4 shadow-sm">
+          <h5 class="mb-3">Envíanos tu consulta</h5>
+          <form class="needs-validation" novalidate id="contactForm" action="#" method="post">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" required>
+                <div class="invalid-feedback">Ingresa tu nombre.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
+                <div class="invalid-feedback">Ingresa un email válido.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Teléfono (opcional)</label>
+                <input type="tel" class="form-control" name="telefono" placeholder="+506 0000 0000">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Destino de interés</label>
+                <select class="form-select" name="destino" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option>Cartagena</option>
+                  <option>Medellín</option>
+                  <option>Santa Marta</option>
+                </select>
+                <div class="invalid-feedback">Selecciona un destino.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Fecha estimada</label>
+                <input type="date" class="form-control" name="fecha">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">N.º de personas</label>
+                <input type="number" class="form-control" name="personas" min="1" value="2">
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Mensaje</label>
+                <textarea class="form-control" name="mensaje" rows="4" placeholder="Cuéntanos qué te gustaría visitar..." required></textarea>
+                <div class="invalid-feedback">Cuéntanos brevemente tu idea.</div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="1" id="acepto" required>
+                  <label class="form-check-label" for="acepto">
+                    Acepto ser contactad@ para recibir mi cotización.
+                  </label>
+                  <div class="invalid-feedback">Debes aceptar para enviar.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+              <button type="submit" class="btn btn-success rounded-pill px-4">
+                <i class="bi bi-send me-1"></i> Enviar consulta
+              </button>
+             
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- (Opcional) Mapa -->
+    <div class="row mt-4">
+      <div class="col">
+        <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-sm">
+          <iframe
+            src="https://www.google.com/maps?q=San+Jos%C3%A9+Costa+Rica&output=embed"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CSS rápido para iconos circulares ===== -->
+<style>
+  .icon-circle{
+    width: 40px; height: 40px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+</style>
+
+<!-- ===== JS: Validación y botón WhatsApp con mensaje dinámico ===== -->
+<script>
+  // Bootstrap validation
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) { event.preventDefault(); event.stopPropagation(); }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+
+  // Construir mensaje para WhatsApp desde el formulario
+  (function(){
+    const btnWA = document.getElementById('btnCotizarWA');
+    const form  = document.getElementById('contactForm');
+    const phone = '50612345678'; // <-- CAMBIA a tu número (sin + ni espacios)
+
+    function buildMsg() {
+      const f = new FormData(form);
+      const nombre   = f.get('nombre') || '';
+      const email    = f.get('email') || '';
+      const tel      = f.get('telefono') || '';
+      const destino  = f.get('destino') || '';
+      const fecha    = f.get('fecha') || '';
+      const personas = f.get('personas') || '';
+      const mensaje  = f.get('mensaje') || '';
+
+      const text = `Hola Toucan Adventures,%0A` +
+        `Quiero una cotización:%0A` +
+        `• Nombre: ${encodeURIComponent(nombre)}%0A` +
+        `• Email: ${encodeURIComponent(email)}%0A` +
+        `• Tel: ${encodeURIComponent(tel)}%0A` +
+        `• Destino: ${encodeURIComponent(destino)}%0A` +
+        `• Fecha: ${encodeURIComponent(fecha)}%0A` +
+        `• Personas: ${encodeURIComponent(personas)}%0A` +
+        `• Detalles: ${encodeURIComponent(mensaje)}`;
+
+      return `https://wa.me/${phone}?text=${text}`;
+    }
+
+    // Setea el href dinámicamente al pasar el mouse o enfocar
+    ['mouseenter','focus','click','touchstart'].forEach(evt => {
+      btnWA.addEventListener(evt, () => {
+        btnWA.href = buildMsg();
+      }, {passive:true});
+    });
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- (Opcional) Bootstrap Icons si aún no los cargas -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Botón flotante WhatsApp -->
+<a
+  href="https://wa.me/50612345678?text=Hola%20Toucan%20Adventures,%20quiero%20una%20cotizaci%C3%B3n."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chatear por WhatsApp"
+>
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366; /* WhatsApp */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2);
+    z-index: 1055; /* por encima de la navbar */
+    transition: transform .2s, box-shadow .2s, background-color .2s;
+    text-decoration: none;
+  }
+  .whatsapp-float .bi{ font-size: 1.75rem; line-height: 1; }
+  .whatsapp-float:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(0,0,0,.25);
+    background: #1ebe5d; /* tono más oscuro en hover */
+    color: #fff;
+  }
+
+  /* Separación extra si usas un footer sticky o en móviles muy bajos */
+  @media (max-width: 576px){
+    .whatsapp-float{ right: 14px; bottom: 14px; width: 54px; height: 54px; }
+  }
+</style>
+
+
+<footer class="text-light" 
+        style="background: url('./assets/footerbg.jpg') center/cover no-repeat;">
+  <div class="container py-5">
+    <div class="row gy-4 align-items-start">
+      
+      <!-- 1. Descripción + Logo -->
+      <div class="col-12 col-md-4 text-center text-md-start">
+        <img src="./assets/logonewworld.png" 
+             alt="Toucan Adventures Logo"
+             class="img-fluid mb-3"
+             style="max-height: 120px;">
+        <p class="small">
+          En Toucan Adventures diseñamos experiencias de viaje inolvidables.  
+          Descubre destinos únicos, con el respaldo de guías expertos y atención personalizada.
+        </p>
+      </div>
+
+      <!-- 2. Enlaces Rápidos -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold text-uppercase mb-3">Enlaces</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#inicio" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="#destinos" class="text-light text-decoration-none">Destinos</a></li>
+          <li><a href="#contacto" class="text-light text-decoration-none">Contacto</a></li>
+          <li><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Legal -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold text-uppercase mb-3">Legal</h6>
+        <ul class="list-unstyled small">
+          <li><a href="/terminos" class="text-light text-decoration-none">Términos y Condiciones</a></li>
+          <li><a href="/privacidad" class="text-light text-decoration-none">Política de Privacidad</a></li>
+          <li><a href="/cookies" class="text-light text-decoration-none">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contacto -->
+      <div class="col-12 col-md-4 text-center text-md-start">
+        <h6 class="fw-bold text-uppercase mb-3">Contacto</h6>
+        <ul class="list-unstyled small">
+          <li><i class="bi bi-geo-alt-fill me-2"></i> San José, Costa Rica</li>
+          <li><i class="bi bi-telephone-fill me-2"></i> +506 1234-5678</li>
+          <li><i class="bi bi-envelope-fill me-2"></i> info@toucanadventures.tours</li>
+        </ul>
+        <div class="mt-3" >
+          <a href="https://facebook.com" target="_blank" class="text-light me-3 fs-5" style="text-decoration: none;">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="text-light me-3 fs-5" style="text-decoration: none;">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+
+    <hr class="border-secondary my-4">
+
+    <div class="d-flex flex-column flex-md-row 
+                align-items-center 
+                justify-content-center justify-content-md-between 
+                gap-3 py-3 small">
+      <div>© 2025 Toucan Adventures. Todos los derechos reservados.</div>
+      <div>
+        Desarrollado por 
+        <a href="https://nativainnovations.com" class="text-light text-decoration-none">
+          Nativa Innovations Web Development Agency
+        </a>
+      </div>
+    </div>
+  </div><!-- /.container -->
+</footer>
+
+
+
+
+  <!-- 2) Al final del <body>, carga JS de AOS y arranca -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,          // anima solo la primera vez que aparece
+      mirror: true        // no anima al hacer scroll hacia arriba
+    });
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
